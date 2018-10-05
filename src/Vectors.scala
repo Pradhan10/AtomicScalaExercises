@@ -4,27 +4,20 @@ import com.atomicscala.AtomicTest._
 object Vectors extends App {
 
   // A Vector holds other objects:
-  val v1 = Vector(1, 3, 5, 7, 11, 13)
-  v1 is Vector(1, 3, 5, 7, 11, 13)
+  val v1 = new Vector()
+  // v1 is Vector()
+  var sum_of = Range.inclusive(0, 10)
+  print(sum_of.isInclusive)
 
-  v1(4) is 11 // "Indexing" into a Vector
-  val v3 = Vector(1.1, 2.2, 3.3, 4.4)
-  for (i <- v1) {
-    result += i + " "
-  }
-  result is "1 3 5 7 11 13 "
-  // Take each element of the Vector:
-  var result = ""
-  // reverse is an operation on the Vector:
-  v3.reverse is Vector(4.4, 3.3, 2.2, 1.1)
-  var v4 = Vector("Twas", "Brillig", "And",
-    "Slithy", "Toves")
-  v4 is Vector("Twas", "Brillig", "And",
-    "Slithy", "Toves")
-  v4.sorted is Vector("And", "Brillig",
-    "Slithy", "Toves", "Twas")
-  v4.head is "Twas"
-  v4.tail is Vector("Brillig", "And", "Slithy", "Toves")
+  /*List and set example*/
+  var list = List("12", 12, true, "afasdasa")
+  print(list)
 
+  /*Create two vectors and compare*/
+  var myvec1 = Vector(12, 32)
+  var myvec2 = Vector(12, 32)
 
+  assert(myvec1 == myvec2, "assert failed")
+
+  myvec1 is myvec2
 }

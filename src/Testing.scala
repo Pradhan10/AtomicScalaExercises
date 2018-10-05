@@ -6,20 +6,39 @@ match
 @mail pradhanrishi10@yandex.com
 * */
 
-import com.atomicscala.AtomicTest._
+import scala.util.Try
 
 object Testing extends App {
 
-  val myValue1 = 20
-  val myValue2 = 10
+  /*conventional Exception handling in scala*/
+  def di(a: Int): Int = {
+    try {
+      7 / a
+    }
+    catch {
+      case e: ArithmeticException => {
+        print("handled")
+        9
+      }
+    }
+  }
 
-  myValue1 is myValue2
+  //  di(0)
 
-  val myValue3 = 10
-  val myValue4 = 10
+  /*Recommended exception handling in scala*/
+  def divAgain(a: Int): Int = {
+    Try(10 / a) match {
+      case scala.util.Success(value) => {
+        print("handled again")
+        value
+      }
+      case scala.util.Failure(exception) => {
+        print("do that")
+        0
+      }
+    }
+  }
 
-  myValue3 is myValue4
-
-  val myValue5 = "10"
-  myValue2 is myValue5
+  divAgain(0)
 }
+

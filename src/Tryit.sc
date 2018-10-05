@@ -1,21 +1,24 @@
+// Solution-7.scala
+// Solution to Exercise 7 in "Class Arguments"
 import com.atomicscala.AtomicTest._
 
-def forecast(prob: Int): String = {
-  prob match {
-    case 100 => "Sunny"
-    case 80 => "Mostly Sunny"
-    case 50 => "Partly Sunny"
-    case 20 => "Mostly Cloudy"
-    case 0 => "Cloudy"
-    case _ => "Unknown"
+val cup3 = new Cup3(0)
+
+class Cup3(var percentFull: Int) {
+  val max = 100
+
+  def add(amount: Int): Int = {
+    percentFull += amount
+    if (percentFull > max) {
+      percentFull = max
+    }
+    percentFull
   }
 }
 
-forecast(100) is "Sunny"
-forecast(80) is "Mostly Sunny"
-forecast(50) is "Partly Sunny"
-forecast(20) is "Mostly Cloudy"
-forecast(0) is "Cloudy"
-forecast(15) is "Unknown"
+cup3.percentFull = 100 /*Setting the value*/
+cup3.percentFull is 100 /*Getting the value*/
 
-
+/* OUTPUT_SHOULD_BE
+100
+*/

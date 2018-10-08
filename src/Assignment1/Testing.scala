@@ -1,11 +1,3 @@
-/*
- Create a value named myValue1 initialized to 20. Create a value
-named myValue2 initialized to 10. Use “is” to test that they do not
-match
-@Author Pradhan Rishi Sharma
-@mail pradhanrishi10@yandex.com
-* */
-
 import scala.util.Try
 
 object Testing extends App {
@@ -41,4 +33,3 @@ object Testing extends App {
 
   divAgain(0)
 }
-

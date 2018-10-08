@@ -1,3 +1,7 @@
+package Assignment1
+
+;
+
 object VarArgs extends App {
 
   /*Class arguments 1*/
@@ -49,4 +53,3 @@ object VarArgs extends App {
 
   check.printFull()
 }
-

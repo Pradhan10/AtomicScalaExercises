@@ -1,6 +1,3 @@
-// Vectors.scala
-import com.atomicscala.AtomicTest._
-
 object Vectors extends App {
 
   // A Vector holds other objects:
@@ -19,5 +16,6 @@ object Vectors extends App {
 
   assert(myvec1 == myvec2, "assert failed")
 
-  myvec1 is myvec2
+  //myvec1 is myvec2
+
 }
